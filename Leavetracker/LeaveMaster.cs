@@ -165,7 +165,7 @@ namespace LeaveTracker
             }
             catch (Exception ee)
             {
-
+		Console.WriteLine(ee.Message);
             }
             Console.ReadLine();
 
@@ -268,12 +268,6 @@ namespace LeaveTracker
                         using (var reader = new StreamReader(objConstant.LeavesFilePath))
                         {
                             string headerline = reader.ReadLine();
-                            if (headerline == "")
-                            {
-                                var csv = new StringBuilder();
-                                headerline = "ID,Creator,Manager,Title,Description, Start-Date,End-Date,Status";
-                                csv.AppendLine(headerline);
-                            }
                             string line;
                             while ((line = reader.ReadLine()) != null)
                             {
